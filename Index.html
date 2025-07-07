@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PMR 039 SMAN 6 Medan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Website resmi PMR 039 SMA Negeri 6 Medan – berisi informasi kegiatan, divisi, galeri, dan pendaftaran anggota baru.">
+<meta name="keywords" content="PMR, PMI, SMA Negeri 6 Medan, Palang Merah, PMR 039, pendaftaran PMR">
+<meta name="author" content="PMR 039 SMAN 6 Medan">
+</head>
+<style>
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: none;
+  background-color: var(--merah);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.4rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  z-index: 999;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#backToTop:hover {
+  background-color: var(--merah-gelap);
+  transform: translateY(-3px);
+}
+
+  :root {
+  --merah: #D32F2F;
+  --merah-gelap: #B71C1C;
+  --merah-muda: #FFCDD2;
+  --putih: #FFFFFF;
+  --abu: #F5F5F5;
+  --abu-gelap: #424242;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--abu);
+  color: var(--abu-gelap);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+  background: var(--merah);
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--putih);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-container img { 
+  height: 40px; 
+  border-radius: 50%; 
+  background: white; 
+  padding: 2px;
+  object-fit: contain;
+}
+
+header h1 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  flex-grow: 1;
+  text-align: center;
+}
+
+#hamburger {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 25px;
+}
+
+#hamburger span {
+  height: 3px;
+  width: 100%;
+  background: white;
+  transition: var(--transition);
+  border-radius: 3px;
+}
+
+#hamburger.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+#hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 70px;
+  right: -250px;
+  width: 220px;
+  background: var(--merah-gelap);
+  height: calc(100vh - 70px);
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  z-index: 999;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+}
+
+nav.open { 
+  right: 0; 
+}
+
+nav a {
+  padding: 12px 25px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+nav a i {
+  font-size: 1.2rem;
+}
+
+nav a:hover, nav a.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+#credit {
+  margin-top: auto;
+  padding: 15px;
+  font-size: 0.7rem;
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+section {
+  display: none;
+  animation: fade 0.5s ease;
+  padding: 20px 0;
+}
+
+section.active { 
+  display: block; 
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: var(--merah-gelap);
+  font-size: 1.8rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--merah);
+  border-radius: 3px;
+}
+
+h3 {
+  margin: 20px 0 10px;
+  color: var(--merah);
+  font-size: 1.4rem;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card i {
+  font-size: 2.5rem;
+  color: var(--merah);
+  margin-bottom: 15px;
+  display: block;
+}
+
+.card strong {
+  font-weight: 600;
+  color: var(--merah-gelap);
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.gallery img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Form Styles */
+form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 30px auto;
+  box-shadow: var(--shadow);
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+  font-weight: 500;
+  color: var(--abu-gelap);
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--merah);
+  box-shadow: 0 0 0 2px rgba(211, 47, 47, 0.2);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: var(--merah);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+button:hover { 
+  background: var(--merah-gelap); 
+  transform: translateY(-2px);
+}
+
+/* List Styles */
+ul {
+  margin: 15px 0;
+  padding-left: 20px;
+  list-style-type: none;
+}
+
+li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+li:before {
+  content: "•";
+  color: var(--merah);
+  position: absolute;
+  left: 0;
+}
+
+/* Footer */
+footer {
+  background: var(--merah-gelap);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+}
+
+/* Sub Sections */
+#sub-kegiatan, #sub-divisi {
+  padding: 30px 0;
+}
+
+#sub-kegiatan h2, #sub-divisi h2 {
+  color: var(--merah-gelap);
+  margin-bottom: 15px;
+}
+
+#sub-kegiatan p, #sub-divisi p {
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+#sub-kegiatan a, #sub-divisi a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--merah);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 8px 15px;
+  border-radius: 6px;
+  background: var(--abu);
+}
+
+#sub-kegiatan a:hover, #sub-divisi a:hover {
+  color: white;
+  background: var(--merah);
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 10px;
+}
+
+/* Notification */
+#notif {
+  display: none;
+  color: #388E3C;
+  text-align: center;
+  margin: 15px 0;
+  padding: 10px;
+  background: #E8F5E9;
+  border-radius: 5px;
+}
+
+/* Contact Section */
+.contact-section {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--merah-muda);
+}
+
+.contact-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background: var(--merah);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.contact-links a:hover {
+  background: var(--merah-gelap);
+  transform: translateY(-2px);
+}
+
+.contact-links i {
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  #hamburger { 
+    display: none; 
+  }
+  
+  nav {
+    position: static;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    right: 0 !important;
+    background: transparent;
+    box-shadow: none;
+    width: auto;
+    padding: 0;
+  }
+  
+  nav a { 
+    padding: 10px 20px; 
+    border-radius: 6px;
+  }
+  
+  nav a:hover, nav a.active {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  #credit { 
+    display: none; 
+  }
+  
+  header h1 {
+    font-size: 1.4rem;
+  }
+  
+  main {
+    padding: 30px;
+  }
+  
+  section {
+    padding: 30px 0;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .contact-links {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 992px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+/* Tombol Dark Mode (Icon Switch Modern) */
+#darkToggle {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  border: none;
+  font-size: 1.4rem;
+  color: white;
+  cursor: pointer;
+  margin-left: 15px;
+  border-radius: 50%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#darkToggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: rotate(25deg) scale(1.1);
+}
+
+/* DARK MODE ROOT STYLING */
+body.dark {
+  background: #0e0e0e;
+  color: #f5f5f5;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Header & Navbar */
+body.dark header,
+body.dark nav {
+  background: #1a1a1a;
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Card, Form, Inputs */
+body.dark .card,
+body.dark form,
+body.dark input,
+body.dark textarea,
+body.dark select {
+  background: #1b1b1b;
+  color: #f0f0f0;
+  border-color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark input::placeholder,
+body.dark textarea::placeholder {
+  color: #aaa;
+}
+
+/* Hover Card */
+body.dark .card:hover {
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.06);
+}
+
+/* Galeri */
+body.dark .gallery img:hover {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.08);
+}
+
+/* Footer */
+body.dark footer {
+  background: #161616;
+  color: #bbb;
+}
+
+/* Scroll to Top Button */
+body.dark #backToTop {
+  background: #292929;
+  color: #f5f5f5;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+
+body.dark #backToTop:hover {
+  background: #444;
+}
+</style>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf650s2cwtdLf5bU4OiotKhMUF59_-_2v4bA&s" alt="logo sman 6" />
+      <img src="https://upload.wikimedia.org/wikipedia/id/6/65/Pmi.png" alt="Logo pmi" />
+    </div>
+    <h1>PMR 039 SMA Negeri 6 Medan</h1>
+    <div id="hamburger"><span></span><span></span><span></span></div>
+  </header>
+  <nav id="navbar">
+    <a href="#beranda" class="active">Beranda</a>
+    <a href="#materi">Materi</a>
+    <a href="#kegiatan">Kegiatan</a>
+    <a href="#divisi">Divisi</a>
+    <a href="#galeri">Galeri</a>
+    <a href="#daftar">Daftar</a>
+    <a href="#tentang">Tentang</a>
+    <button id="darkToggle" title="Ganti Mode" aria-label="Dark Mode Toggle">🌙</button>
+    <div id="credit">Credit by @vyx.official</div>
+  </nav>
+  <main>
+    <section id="beranda" class="active">
+      <h2>SIAMO! Selamat Datang di website PMR 039 SMA NEGERI 6 Medan!</h2>
+      <p>Palang Merah Remaja (PMR) adalah wadah binaan Palang Merah Indonesia (PMI) yang berfokus pada pengembangan karakter remaja di sekolah atau kelompok masyarakat. PMR bertujuan untuk melatih kepemimpinan, pertolongan pertama, dan kesiagaan bencana, serta mempromosikan prinsip-prinsip dasar Gerakan Palang Merah dan Bulan Sabit Merah Internasional.</p>
+    </section>
+    
+    <section id="materi">
+      <h2>🕊️ 7 Prinsip Dasar Gerakan Palang Merah dan Bulan Sabit Merah Internasional</h2>
+      <ul>
+        <li>1. kemanusiaan :<br>→ Menolong sesama tanpa membedakan, demi mengurangi penderitaan manusia.</li>
+        <li>2. kesamaan :<br>→ Memberikan bantuan tanpa membedakan kebangsaan, ras, agama, status sosial, atau pandangan politik.</li>
+        <li>3. kenetralan :<br>→ Tidak berpihak dalam konflik, agar tetap dipercaya oleh semua pihak.</li>
+        <li>4. kemandirian :<br>→ Bertindak mandiri sesuai prinsip-prinsip kemanusiaan, tanpa intervensi pihak luar.</li>
+        <li>5. kesukarelaan :<br>→ Berbakti secara sukarela tanpa pamrih.</li>
+        <li>6. Kesatuan :<br>→ Hanya satu Palang Merah/Bulan Sabit Merah di setiap negara, terbuka untuk semua dan menjangkau seluruh wilayah.</li>
+        <li>7. Kesemestaan :<br>→ Semua bagian dari gerakan ini memiliki tanggung jawab dan hak yang sama, saling membantu secara global.</li>
+      </ul>
+      <h2>🌟 Tri Bakti PMR</h2>
+      <ul>
+        <li>1. Meningkatkan keterampilan hidup sehat.</li>
+        <li>2. Berkarya dan berbakti di masyarakat.</li>
+        <li>3. Mempererat persahabatan nasional dan internasional.</li>
+      </ul>
+      <h2>📜Materi PMR</h2>
+      <ul>
+        <li>Gerakan Kepalangmerahan:<br>Mengenal sejarah, lambang, dan kegiatan kepalangmerahan, serta prinsip-prinsip dasar gerakan Palang Merah dan Bulan Sabit Merah Internasional.</li>
+        <li>Kepemimpinan:<br>Membangun kemampuan bekerja sama, berkomunikasi, bersahabat, menjadi pendidik sebaya, dan memberikan dukungan.</li>
+        <li>Pertolongan Pertama:<br>Memberikan pertolongan pertama pada kecelakaan atau cedera, seperti menghentikan perdarahan, membebaskan jalan napas, dan melakukan CPR.</li>
+        <li>Kesehatan Remaja:<br>Menjaga kesehatan reproduksi, memahami bahaya Napza dan HIV/AIDS, serta memiliki pengetahuan tentang kesehatan mental.</li>
+        <li>Sanitasi dan Kesehatan:<br>Menjaga kebersihan diri dan lingkungan, serta memahami cara-cara pencegahan penyakit.</li>
+        <li>Kesiapsiagaan Bencana:<br>Mengenal jenis bencana, cara-cara pencegahan, dan mempersiapkan diri menghadapi bencana.</li>
+        <li>Donor Darah:<br>Memahami proses donor darah, manfaat donor darah, dan cara-cara merekrut donor darah remaja.</li>
+      </ul>
+    </section>
+    
+    <section id="kegiatan">
+      <h2>Program dan Kegiatan</h2>
+      <div class="card-grid">
+        <div class="card" onclick="bukaKegiatan('Pelatihan Dasar', 'Pelatihan ini memberikan bekal awal bagi anggota PMR berupa dasar-dasar pertolongan pertama, pemahaman prinsip Palang Merah, serta penanaman kedisiplinan, tanggung jawab, dan kerja sama. Tujuannya agar anggota siap bertugas dalam kegiatan sosial dan situasi darurat.')">
+          <i class="ph ph-first-aid"></i> 
+          <strong>Pelatihan Dasar</strong>
+        </div>
+        <div class="card" onclick="bukaKegiatan('Donor Darah', 'Kegiatan donor darah yang dilakukan secara rutin bekerja sama dengan PMI. Melalui kegiatan ini, anggota PMR membantu memenuhi kebutuhan darah di rumah sakit sekaligus mengajak masyarakat untuk ikut berdonor demi menyelamatkan nyawa.')">
+          <i class="ph ph-hand-heart"></i> 
+          <strong>Donor Darah</strong>
+        </div>
+        <div class="card" onclick="bukaKegiatan('Bakti Sosial', 'Bakti Sosial adalah kegiatan kemanusiaan yang dilakukan untuk membantu masyarakat sekitar, seperti membagikan bantuan, membersihkan lingkungan, dan memberikan pelayanan sosial. Selain membantu, kegiatan ini juga mempererat persahabatan dan rasa kepedulian antar anggota dan warga sekitar.')">
+          <i class="ph ph-house-line"></i> 
+          <strong>Bakti Sosial</strong>
+        </div>
+        <div class="card" onclick="bukaKegiatan('Simulasi Bencana', 'Simulasi bencana adalah pelatihan yang bertujuan melatih anggota PMR untuk tanggap dan siap menghadapi berbagai jenis bencana, seperti gempa, banjir, atau kebakaran. Kegiatan ini meliputi latihan evakuasi, pertolongan pertama, dan koordinasi tim agar saat terjadi bencana, anggota dapat bertindak cepat dan tepat demi keselamatan bersama.')">
+          <i class="ph ph-medal"></i> 
+          <strong>Simulasi Bencana</strong>
+        </div>
+      </div>
+    </section>
+    
+    <section id="sub-kegiatan" style="display:none">
+      <h2 id="sub-kegiatan-judul"></h2>
+      <p id="sub-kegiatan-deskripsi"></p>
+      <a href="#" onclick="kembaliKeKegiatan()">← Kembali ke Kegiatan</a>
+    </section>
+    
+    <section id="divisi">
+      <h2>Divisi PMR</h2>
+      <div class="card-grid">
+        <div class="card" onclick="bukaDivisi('Kesehatan dan kemanusiaan', 'Divisi Kesehatan dan Kemanusiaan bertugas menangani kesehatan, aksi sosial, dan tanggap darurat.')">
+          <i class="ph ph-heartbeat"></i>
+          <strong>Kesehatan dan kemanusiaan</strong>
+        </div>
+        <div class="card" onclick="bukaDivisi('Inventaris', 'Divisi ini bertugas Mengelola perlengkapan, logistik, dan peralatan PMR.')">
+          <i class="ph ph-archive-box"></i>
+          <strong>Inventaris</strong>
+        </div>
+        <div class="card" onclick="bukaDivisi('persahabatan', 'Menjalin keakraban antar anggota dan membangun kerja sama yang solid.')">
+          <i class="ph ph-handshake"></i>
+          <strong>persahabatan</strong>
+        </div>
+        <div class="card" onclick="bukaDivisi('PDD', 'Divisi ini bertugas untuk Publikasi, desain dan dokumentasi dari setiap kegiatan di PMR 039 SMAN 6 Medan.')">
+          <i class="ph ph-camera"></i>
+          <strong>PDD</strong>
+          <small>(Publikasi, Desain, dan Dokumentasi)</small>
+        </div>
+      </div>
+    </section>
+    
+    <section id="sub-divisi" style="display:none">
+      <h2 id="sub-divisi-judul"></h2>
+      <p id="sub-divisi-deskripsi"></p>
+      <a href="#" onclick="kembaliKeDivisi()">← Kembali ke Divisi</a>
+    </section>
+    
+    <section id="galeri">
+      <h2>Galeri Kegiatan</h2>
+      <div class="gallery">
+        <img src="IMG-20250706-WA0113.jpg" alt="Kegiatan PMR">
+        <img src="IMG-20250706-WA0138.jpg" alt="Donor Darah">
+        <img src="IMG-20250706-WA0120.jpg" alt="Pelatihan PMR">
+        <img src="IMG-20250706-WA0121.jpg" alt="Bakti Sosial">
+        <img src="IMG-20250706-WA0126.jpg" alt="Simulasi">
+        <img src="IMG-20250706-WA0123.jpg" alt="Anggota PMR">
+        <img src="IMG-20250706-WA0140.jpg" alt="Kegiatan Sekolah">
+        <img src="IMG-20250706-WA0142.jpg" alt="Pelatihan">
+        <img src="IMG-20250706-WA0132.jpg" alt="Tim PMR">
+        <img src="IMG-20250706-WA0133.jpg" alt="Kegiatan Kemanusiaan">
+        <img src="IMG-20250706-WA0135.jpg" alt="Pertolongan Pertama">
+        <img src="IMG-20250706-WA0136.jpg" alt="Anggota PMR">
+        <img src="IMG-20250706-WA0139.jpg" alt="Pelatihan Dasar">
+        <img src="IMG-20250706-WA0141.jpg" alt="Kegiatan Sosial">
+        <img src="IMG-20250706-WA0144.jpg" alt="PMR 039">
+        <img src="IMG-20250706-WA0146.jpg" alt="Kegiatan Rutin">
+        <img src="IMG-20250706-WA0154.jpg" alt="Simulasi Bencana">
+        <img src="IMG-20250706-WA0165.jpg" alt="Tim Medis">
+        <img src="IMG-20250706-WA0167.jpg" alt="Kegiatan PMI">
+        <img src="IMG-20250707-WA0030.jpg" alt="Pelatihan PMR">
+        <img src="1748676173101.jpg" alt="Anggota PMR">
+        <img src="1748782531406.jpg" alt="Kegiatan Sekolah">
+        <img src="1748782531324.jpg" alt="Donor Darah">
+        <img src="1748782531334.jpg" alt="Bakti Sosial">
+        <img src="1748782531340.jpg" alt="Pertolongan Pertama">
+        <img src="1748782531346.jpg" alt="Simulasi PMR">
+      </div>
+    </section>
+    
+    <section id="daftar">
+      <h2>Formulir Pendaftaran</h2>
+      <h3>Daftar menjadi anggota PMR 039</h3>
+      <form id="formPMR" action="https://formsubmit.co/pmr039unitpdd@gmail.com" method="POST">
+        <label>Nama Lengkap:</label>
+        <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
+        
+        <label>Kelas:</label>
+        <input type="text" name="kelas" placeholder="Contoh: X-1" required>
+        
+        <label>Nomor HP Aktif:</label>
+        <input type="tel" name="hp" placeholder="Contoh: 081234567890" required>
+        
+        <label for="photo">Upload Foto Diri:</label>
+        <input type="file" id="photo" name="photo" accept="image/*">
+        
+        <label>Alasan Bergabung:</label>
+        <textarea name="alasan" placeholder="Tulis alasan kamu ingin bergabung dengan PMR" rows="3" required></textarea>
+        
+        <h3>Persetujuan Orang Tua / Wali</h3>
+        <label>
+          <input type="checkbox" name="izin_wali" required> 
+          Saya sebagai orang tua/wali menyetujui bahwa anak saya mengikuti kegiatan ini.
+        </label>
+        
+        <button type="submit">Daftar Sekarang</button>
+        
+        <div id="loading" style="display:none; text-align:center; margin-top:10px;">
+  <span>⏳ Mengirim...</span>
+</div>
+
+        <p id="notif" aria-live="polite">Pendaftaran berhasil! Cek email kamu 😊</p>
+        
+        <div class="contact-section">
+          <h3>Ada pertanyaan?</h3>
+          <div class="contact-links">
+            <a href="https://wa.me/6281375191097" target="_blank">
+              <i class="ph ph-whatsapp-logo"></i> Chat via WhatsApp
+            </a>
+            <a href="https://www.instagram.com/pmr039_smansix" target="_blank">
+              <i class="ph ph-instagram-logo"></i> Follow Instagram
+            </a>
+          </div>
+        </div>
+      </form>
+    </section>
+    <section id="tentang">
+  <h2>Tentang PMR 039</h2>
+  <p>PMR 039 SMAN 6 Medan... Palang Merah Remaja (PMR) adalah organisasi kepemudaan di bawah Palang Merah Indonesia (PMI) yang bertujuan untuk membina dan mengembangkan karakter kepalangmerahan pada remaja. PMR didirikan pada tanggal 1 Maret 1950, setelah Kongres PMI ke-4 pada Januari 1950. Awalnya bernama Palang Merah Pemuda (PMP) dan dipimpin oleh Siti Dasima. PMR bertujuan agar para remaja siap menjadi relawan PMI di masa depan. Kami bertujuan menjadi pelajar yang tanggap, peduli, dan siap membantu kapan saja. Dengan berbagai divisi dan pelatihan, kami membentuk karakter remaja berjiwa kemanusiaan.</p>
+</section>
+  </main>
+  
+  <footer>
+    &copy; 2025 PMR 039 SMA Negeri 6 Medan
+  </footer>
+
+  <script src="script.js"></script>
+  <button id="backToTop" title="Kembali ke atas">↑</button>
+</body>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const navbar = document.getElementById('navbar');
+  const links = navbar.querySelectorAll('a');
+  
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navbar.classList.toggle('open');
+  });
+
+  // Navigation links
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      // Remove active class from all links
+      links.forEach(l => l.classList.remove('active'));
+      
+      // Add active class to clicked link
+      link.classList.add('active');
+      
+      // Hide all sections
+      document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
+      
+      // Hide sub-sections
+      document.getElementById('sub-kegiatan').style.display = 'none';
+      document.getElementById('sub-divisi').style.display = 'none';
+      
+      // Show target section
+      const target = document.getElementById(link.getAttribute('href').substring(1));
+      target.classList.add('active');
+      
+      // Close menu on mobile
+      if (window.innerWidth < 768) {
+        navbar.classList.remove('open');
+        hamburger.classList.remove('open');
+      }
+      
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+
+  // Form submission
+  const form = document.getElementById('formPMR');
+  if (form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const form = document.getElementById('formPMR');
+if (form) {
+  const loading = document.getElementById("loading");
+  const notif = document.getElementById('notif');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    // Tampilkan loading
+    loading.style.display = 'block';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      loading.style.display = 'none'; // Sembunyikan loading
+
+      if (response.ok) {
+        notif.style.display = 'block';
+        form.reset();
+        setTimeout(() => {
+          notif.style.display = 'none';
+        }, 5000);
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    })
+    .catch(error => {
+      loading.style.display = 'none'; // Sembunyikan loading saat error juga
+      alert("Terjadi kesalahan saat mengirim formulir. Silakan coba lagi.");
+      console.error('Error:', error);
+    });
+  });
+}
+      
+      const formData = new FormData(form);
+      const notif = document.getElementById('notif');
+      
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(response => {
+        if (response.ok) {
+          notif.style.display = 'block';
+          form.reset();
+          setTimeout(() => {
+            notif.style.display = 'none';
+          }, 5000);
+        } else {
+          throw new Error('Network response was not ok');
+        }
+      })
+      .catch(error => {
+        alert("Terjadi kesalahan saat mengirim formulir. Silakan coba lagi.");
+        console.error('Error:', error);
+      });
+    });
+  }
+});
+
+// Kegiatan functions
+function bukaKegiatan(judul, deskripsi) {
+  document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById('sub-kegiatan').style.display = 'block';
+  document.getElementById('sub-kegiatan-judul').textContent = judul;
+  document.getElementById('sub-kegiatan-deskripsi').textContent = deskripsi;
+}
+
+function kembaliKeKegiatan() {
+  document.getElementById('sub-kegiatan').style.display = 'none';
+  document.getElementById('kegiatan').classList.add('active');
+}
+
+// Divisi functions
+function bukaDivisi(judul, deskripsi) {
+  document.querySelectorAll('main section').forEach(sec => sec.classList.remove('active'));
+  document.getElementById('sub-divisi').style.display = 'block';
+  document.getElementById('sub-divisi-judul').textContent = judul;
+  document.getElementById('sub-divisi-deskripsi').textContent = deskripsi;
+}
+
+function kembaliKeDivisi() {
+  document.getElementById('sub-divisi').style.display = 'none';
+  document.getElementById('divisi').classList.add('active');
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// Tambahkan ini SEBELUM
+const backToTop = document.getElementById("backToTop");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    backToTop.style.display = "block";
+  } else {
+    backToTop.style.display = "none";
+  }
+});
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Dark Mode Toggle
+const darkToggle = document.getElementById("darkToggle");
+const body = document.body;
+
+// Load state from localStorage
+if (localStorage.getItem("mode") === "dark") {
+  body.classList.add("dark");
+  darkToggle.textContent = "☀️";
+}
+
+darkToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  const isDark = body.classList.contains("dark");
+  darkToggle.textContent = isDark ? "☀️" : "🌙";
+  localStorage.setItem("mode", isDark ? "dark" : "light");
+});
+</script>
+</html>
