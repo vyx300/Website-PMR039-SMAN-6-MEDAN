@@ -758,12 +758,8 @@ body.dark #backToTop:hover {
     
     <section id="daftar">
       <h2>Formulir Pendaftaran</h2>
-<form id="formPMR" action="https://formsubmit.co/vyx.official01@gmail.com" method="POST" enctype="multipart/form-data">
-  <input type="hidden" name="_next" value="https://websiteanda.com/thank-you.html">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_template" value="table">
-  
       <h3>Daftar menjadi anggota PMR 039</h3>
+      <form id="formPMR" action="https://formsubmit.co/pmr039unitpdd@gmail.com" method="POST">
         <label>Nama Lengkap:</label>
         <input type="text" name="nama" placeholder="Masukkan nama lengkap" required>
         
@@ -773,9 +769,8 @@ body.dark #backToTop:hover {
         <label>Nomor HP Aktif:</label>
         <input type="tel" name="hp" placeholder="Contoh: 081234567890" required>
         
-        <label for="photo">Upload Foto Diri silahkan kirim foto diri melalui link gdrive lalu upload ke sini:</label>
+        <label for="photo">Upload Foto Diri:</label>
         <input type="file" id="photo" name="photo" accept="image/*">
-        <input type="text" id="photo" name="photo" accept="link" placeholder="masukkan link gdrive foto">
         
         <label>Alasan Bergabung:</label>
         <textarea name="alasan" placeholder="Tulis alasan kamu ingin bergabung dengan PMR" rows="3" required></textarea>
@@ -785,6 +780,7 @@ body.dark #backToTop:hover {
           <input type="checkbox" name="izin_wali" required> 
           Saya sebagai orang tua/wali menyetujui bahwa anak saya mengikuti kegiatan ini.
         </label>
+        
         <button type="submit">Daftar Sekarang</button>
         
         <div id="loading" style="display:none; text-align:center; margin-top:10px;">
@@ -801,6 +797,9 @@ body.dark #backToTop:hover {
             </a>
             <a href="https://www.instagram.com/pmr039_smansix" target="_blank">
               <i class="ph ph-instagram-logo"></i> Follow Instagram
+            </a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUmCMS_sJRll4zWNfN3UIPmYGNSBk9DmNWfpmbZ-xNXzxQiw/viewform?usp=header" target="_blank"> yuk ke gform aja!
+            <i class="ph ph-google-logo"></i>
             </a>
           </div>
         </div>
@@ -929,7 +928,7 @@ if (form) {
         }
       })
       .catch(error => {
-        alert("Berhasil mengirim formulir! 😆😘.");
+        alert("Terjadi kesalahan saat mengirim formulir. Silakan coba lagi.");
         console.error('Error:', error);
       });
     });
